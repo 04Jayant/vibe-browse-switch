@@ -16,22 +16,31 @@ const TrendingPage = ({ contentMode }: TrendingPageProps) => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-          Trending {contentMode === 'videos' ? 'Videos' : 'Books'}
-        </h1>
-        <p className="text-gray-300 text-lg mb-8">
-          Discover what everyone is {contentMode === 'videos' ? 'watching' : 'reading'} right now
-        </p>
-        
-        {/* Trending Stats */}
-        <div className="flex justify-center gap-8 mb-8">
-          {trendingStats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-2xl font-bold text-white mb-1">{stat.count}</div>
-              <div className="text-gray-400 text-sm">{stat.label}</div>
-            </div>
-          ))}
+      {/* Hero Section with Trending Theme */}
+      <div className="relative mb-12 rounded-3xl overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-25"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=300&fit=crop')`
+          }}
+        />
+        <div className="relative bg-black/60 backdrop-blur-sm p-12 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Trending {contentMode === 'videos' ? 'Videos' : 'Books'}
+          </h1>
+          <p className="text-gray-300 text-lg mb-8">
+            Discover what everyone is {contentMode === 'videos' ? 'watching' : 'reading'} right now
+          </p>
+          
+          {/* Trending Stats */}
+          <div className="flex justify-center gap-8">
+            {trendingStats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-2xl font-bold text-white mb-1">{stat.count}</div>
+                <div className="text-gray-400 text-sm">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

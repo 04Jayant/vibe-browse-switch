@@ -32,13 +32,22 @@ const ExplorePage = ({ contentMode }: ExplorePageProps) => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-          Explore {contentMode === 'videos' ? 'Videos' : 'Books'}
-        </h1>
-        <p className="text-gray-300 text-lg">
-          Browse by category and discover your next favorite {contentMode === 'videos' ? 'video' : 'book'}
-        </p>
+      {/* Hero Section with Explore Theme */}
+      <div className="relative mb-12 rounded-3xl overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-30"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=300&fit=crop')`
+          }}
+        />
+        <div className="relative bg-black/50 backdrop-blur-sm p-12 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Explore {contentMode === 'videos' ? 'Videos' : 'Books'}
+          </h1>
+          <p className="text-gray-300 text-lg">
+            Browse by category and discover your next favorite {contentMode === 'videos' ? 'video' : 'book'}
+          </p>
+        </div>
       </div>
 
       {/* Category Filter */}
@@ -49,7 +58,7 @@ const ExplorePage = ({ contentMode }: ExplorePageProps) => {
             onClick={() => setSelectedCategory(category.id)}
             className={`px-6 py-3 rounded-2xl transition-all duration-300 ${
               selectedCategory === category.id
-                ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg'
+                ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg'
                 : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white backdrop-blur-md border border-white/10'
             }`}
           >

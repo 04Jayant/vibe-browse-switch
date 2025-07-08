@@ -28,8 +28,23 @@ const Index = () => {
     }
   };
 
+  const getBackgroundClass = () => {
+    switch (activePage) {
+      case 'home':
+        return 'bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900';
+      case 'explore':
+        return 'bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900';
+      case 'trending':
+        return 'bg-gradient-to-br from-red-900 via-rose-900 to-slate-900';
+      case 'settings':
+        return 'bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900';
+      default:
+        return 'bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900';
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className={`min-h-screen ${getBackgroundClass()}`}>
       <Navigation activePage={activePage} setActivePage={setActivePage} />
       <main className="pt-20">
         {renderActivePage()}

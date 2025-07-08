@@ -26,9 +26,18 @@ const SettingsPage = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Settings</h1>
-        <p className="text-gray-300 text-lg">Customize your VidBooks experience</p>
+      {/* Hero Section with Settings Theme */}
+      <div className="relative mb-12 rounded-3xl overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=300&fit=crop')`
+          }}
+        />
+        <div className="relative bg-black/70 backdrop-blur-sm p-12 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Settings</h1>
+          <p className="text-gray-300 text-lg">Customize your VidBooks experience</p>
+        </div>
       </div>
 
       <div className="grid gap-8 md:grid-cols-2">
@@ -41,7 +50,7 @@ const SettingsPage = () => {
                 <h3 className="text-white font-medium">Profile</h3>
                 <p className="text-gray-400 text-sm">Update your profile information</p>
               </div>
-              <button className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
+              <button className="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
                 Edit
               </button>
             </div>
@@ -50,7 +59,7 @@ const SettingsPage = () => {
                 <h3 className="text-white font-medium">Subscription</h3>
                 <p className="text-gray-400 text-sm">Manage your subscription plan</p>
               </div>
-              <button className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
+              <button className="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
                 Manage
               </button>
             </div>
@@ -69,7 +78,7 @@ const SettingsPage = () => {
               <button
                 onClick={() => handleToggle('autoplay')}
                 className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                  preferences.autoplay ? 'bg-purple-600' : 'bg-gray-600'
+                  preferences.autoplay ? 'bg-gray-600' : 'bg-gray-700'
                 }`}
               >
                 <span
@@ -84,7 +93,7 @@ const SettingsPage = () => {
               <select
                 value={preferences.qualityPreference}
                 onChange={(e) => handleSelect('qualityPreference', e.target.value)}
-                className="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-purple-400"
+                className="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-gray-400"
               >
                 <option value="auto">Auto</option>
                 <option value="high">High Quality</option>
@@ -107,7 +116,7 @@ const SettingsPage = () => {
               <button
                 onClick={() => handleToggle('notifications')}
                 className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                  preferences.notifications ? 'bg-purple-600' : 'bg-gray-600'
+                  preferences.notifications ? 'bg-gray-600' : 'bg-gray-700'
                 }`}
               >
                 <span
@@ -129,7 +138,7 @@ const SettingsPage = () => {
               <select
                 value={preferences.language}
                 onChange={(e) => handleSelect('language', e.target.value)}
-                className="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-purple-400"
+                className="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-gray-400"
               >
                 <option value="en">English</option>
                 <option value="es">Español</option>
@@ -143,7 +152,7 @@ const SettingsPage = () => {
 
       {/* Save Button */}
       <div className="text-center mt-12">
-        <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-2xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-lg">
+        <button className="px-8 py-4 bg-gradient-to-r from-gray-600 to-slate-600 text-white font-semibold rounded-2xl hover:from-gray-700 hover:to-slate-700 transition-all duration-300 shadow-lg">
           Save Changes
         </button>
       </div>
