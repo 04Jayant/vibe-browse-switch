@@ -61,13 +61,13 @@ const HomePage = ({ contentMode, setContentMode }: HomePageProps) => {
       {/* Recommended Content */}
       <section className="mb-12">
         <h2 className="text-2xl font-bold text-white mb-6">Recommended for You</h2>
-        <ContentCarousel contentMode={contentMode} />
+        <ContentCarousel contentMode={contentMode} page="home" />
       </section>
 
       {/* Recently Added */}
       <section>
         <h2 className="text-2xl font-bold text-white mb-6">Recently Added</h2>
-        <ContentCarousel contentMode={contentMode} />
+        <ContentCarousel contentMode={contentMode} page="home" />
       </section>
     </div>
   );

@@ -74,17 +74,17 @@ const ExplorePage = ({ contentMode }: ExplorePageProps) => {
           <h2 className="text-2xl font-bold text-white mb-6">
             {selectedCategory === 'all' ? 'Popular' : categories.find(c => c.id === selectedCategory)?.name}
           </h2>
-          <ContentCarousel contentMode={contentMode} />
+          <ContentCarousel contentMode={contentMode} page="explore" />
         </section>
 
         <section>
           <h2 className="text-2xl font-bold text-white mb-6">New Releases</h2>
-          <ContentCarousel contentMode={contentMode} />
+          <ContentCarousel contentMode={contentMode} page="explore" />
         </section>
 
         <section>
           <h2 className="text-2xl font-bold text-white mb-6">Editor's Choice</h2>
-          <ContentCarousel contentMode={contentMode} />
+          <ContentCarousel contentMode={contentMode} page="explore" />
         </section>
       </div>
     </div>

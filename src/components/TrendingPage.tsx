@@ -53,7 +53,7 @@ const TrendingPage = ({ contentMode }: TrendingPageProps) => {
             </div>
             <h2 className="text-2xl font-bold text-white">Hot Right Now</h2>
           </div>
-          <ContentCarousel contentMode={contentMode} />
+          <ContentCarousel contentMode={contentMode} page="trending" />
         </section>
 
         <section>
@@ -63,7 +63,7 @@ const TrendingPage = ({ contentMode }: TrendingPageProps) => {
             </div>
             <h2 className="text-2xl font-bold text-white">Rising Fast</h2>
           </div>
-          <ContentCarousel contentMode={contentMode} />
+          <ContentCarousel contentMode={contentMode} page="trending" />
         </section>
 
         <section>
@@ -73,7 +73,7 @@ const TrendingPage = ({ contentMode }: TrendingPageProps) => {
             </div>
             <h2 className="text-2xl font-bold text-white">Top Rated This Week</h2>
           </div>
-          <ContentCarousel contentMode={contentMode} />
+          <ContentCarousel contentMode={contentMode} page="trending" />
         </section>
 
         <section>
@@ -83,7 +83,7 @@ const TrendingPage = ({ contentMode }: TrendingPageProps) => {
             </div>
             <h2 className="text-2xl font-bold text-white">All-Time Favorites</h2>
           </div>
-          <ContentCarousel contentMode={contentMode} />
+          <ContentCarousel contentMode={contentMode} page="trending" />
         </section>
       </div>
     </div>
