@@ -25,27 +25,21 @@ const EpicAdventurePage = () => {
     },
     {
       id: 4,
-      title: "The Mystic Forest Chronicles",
+      title: "Path of the Ice Warrior",
       thumbnail: "https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=400&h=300&fit=crop",
       duration: "2:30:15"
     },
     {
       id: 5,
-      title: "Dragon's Realm Expedition",
+      title: "Legends of the Shadow Realm",
       thumbnail: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=400&h=300&fit=crop",
       duration: "4:05:10"
-    },
-    {
-      id: 6,
-      title: "Valley of Ancient Legends",
-      thumbnail: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=300&fit=crop",
-      duration: "2:18:30"
     }
   ];
 
   const handleVideoClick = (video: typeof adventureVideos[0]) => {
-    // For now, we'll just log the video. In a real app, this would open a video player
-    console.log(`Playing: ${video.title}`);
+    // For now, we'll just log the video. In a real app, this would open a video player or detail page
+    console.log(`Opening: ${video.title}`);
   };
 
   return (
@@ -76,9 +70,9 @@ const EpicAdventurePage = () => {
         </div>
       </div>
 
-      {/* Video Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Video Grid - Responsive 2x2 on mobile, 3x2 on desktop */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {adventureVideos.map((video) => (
             <div
               key={video.id}
