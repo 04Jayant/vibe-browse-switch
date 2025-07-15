@@ -8,7 +8,7 @@ interface ContentToggleProps {
 
 const ContentToggle = ({ contentMode, setContentMode }: ContentToggleProps) => {
   return (
-    <div className="relative bg-white/10 backdrop-blur-md p-1 rounded-2xl border border-white/20">
+    <div className="relative bg-white/20 backdrop-blur-md p-1 rounded-2xl border border-white/30 shadow-lg">
       <div className="flex">
         <button
           onClick={() => setContentMode('videos')}
