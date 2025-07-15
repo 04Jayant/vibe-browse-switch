@@ -31,7 +31,7 @@ const Index = () => {
   const getBackgroundClass = () => {
     switch (activePage) {
       case 'home':
-        return 'bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900';
+        return 'bg-black';
       case 'explore':
         return 'bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900';
       case 'trending':
@@ -39,7 +39,7 @@ const Index = () => {
       case 'settings':
         return 'bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900';
       default:
-        return 'bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900';
+        return 'bg-black';
     }
   };
 
