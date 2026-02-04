@@ -21,7 +21,7 @@ const Navigation = ({ activePage, setActivePage }: NavigationProps) => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">C</span>
+              <span className="text-white font-bold text-lg">F</span>
             </div>
             <span className="text-white font-bold text-xl">Funny</span>
           </div>
