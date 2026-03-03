@@ -12,23 +12,9 @@ const ContentToggle = ({ contentMode, setContentMode }: ContentToggleProps) => {
       <div className="flex">
         <button
           onClick={() => setContentMode('videos')}
-          className={`relative px-6 py-3 rounded-xl transition-all duration-300 ${
-            contentMode === 'videos'
-              ? 'text-white bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg'
-              : 'text-gray-300 hover:text-white'
-          }`}
+          className="relative px-6 py-3 rounded-xl text-white bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg"
         >
           🎬 Videos
-        </button>
-        <button
-          onClick={() => setContentMode('books')}
-          className={`relative px-6 py-3 rounded-xl transition-all duration-300 ${
-            contentMode === 'books'
-              ? 'text-white bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg'
-              : 'text-gray-300 hover:text-white'
-          }`}
-        >
-          📚 Books
         </button>
       </div>
     </div>
