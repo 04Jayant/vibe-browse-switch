@@ -1,9 +1,8 @@
 
 import { useState } from "react";
-import { Search, ArrowRight, Play } from "lucide-react";
+import { Search, ArrowRight, Play, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { ContentMode } from "@/pages/Index";
-import ContentToggle from "./ContentToggle";
 import ContentCarousel from "./ContentCarousel";
 
 interface HomePageProps {
@@ -17,7 +16,7 @@ const HomePage = ({ contentMode, setContentMode }: HomePageProps) => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      {/* Hero Section with Background Image */}
+      {/* Hero Section */}
       <div className="relative mb-12 rounded-3xl overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-20"
@@ -29,19 +28,28 @@ const HomePage = ({ contentMode, setContentMode }: HomePageProps) => {
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Discover Amazing{" "}
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              {contentMode === 'videos' ? 'Videos' : 'Books'}
+              Videos
             </span>
           </h1>
           <p className="text-gray-300 text-lg mb-8">
-            {contentMode === 'videos' 
-              ? 'Stream the latest movies, documentaries, and series'
-              : 'Read bestsellers, classics, and discover new authors'
-            }
+            Stream the latest movies, documentaries, and series
           </p>
           
-          {/* Content Toggle */}
-          <div className="flex justify-center mb-8">
-            <ContentToggle contentMode={contentMode} setContentMode={setContentMode} />
+          {/* Action Buttons */}
+          <div className="flex flex-wrap justify-center gap-4">
+            <button
+              onClick={() => navigate("/epic-adventure")}
+              className="flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold rounded-xl shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300 hover:scale-105"
+            >
+              <Play size={20} />
+              Start Watching
+            </button>
+            <button
+              className="flex items-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-semibold rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105"
+            >
+              <Sparkles size={20} />
+              Become a Creator
+            </button>
           </div>
         </div>
       </div>
@@ -52,7 +60,7 @@ const HomePage = ({ contentMode, setContentMode }: HomePageProps) => {
           <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
           <input
             type="text"
-            placeholder={`Search for ${contentMode}...`}
+            placeholder="Search for videos..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-12 pr-4 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
